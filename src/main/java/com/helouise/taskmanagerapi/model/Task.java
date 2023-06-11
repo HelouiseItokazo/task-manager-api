@@ -2,6 +2,8 @@ package com.helouise.taskmanagerapi.model;
 
 import java.time.LocalDate;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -34,6 +36,7 @@ public class Task {
 	private PriorityOrderEnum sorting;
 	
 	@Column(name = "dt_due")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dueDate;
 	
 	@Column(name = "stts_over_due")
